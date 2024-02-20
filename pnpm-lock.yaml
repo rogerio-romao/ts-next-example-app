@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@isnotdefined/stylelint-plugin':
-    specifier: ^4.0.0
-    version: 4.0.0(stylelint@16.2.0)
+    specifier: ^5.0.0
+    version: 5.0.0(stylelint@16.2.0)
   '@playwright/test':
     specifier: ^1.41.2
     version: 1.41.2
@@ -570,8 +570,8 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: true
 
-  /@isnotdefined/stylelint-plugin@4.0.0(stylelint@16.2.0):
-    resolution: {integrity: sha512-KHUgUWK/dZp88JRa3qBpS2VCsbPota2y/Gz9QHCRN/CzQEuV9XttJrNzKNyUjVCNdo61ZQTy/CqCyPiQpg50yA==}
+  /@isnotdefined/stylelint-plugin@5.0.0(stylelint@16.2.0):
+    resolution: {integrity: sha512-EMLlD0TgmN1KpkpYGG/j0ojoQtvYJFKiSMURv1wLrlKueo1/2tpMmpq5QfV4e1Xd7vOPT0elJodbVO65/CvTMw==}
     peerDependencies:
       stylelint: ^16
     dependencies:
