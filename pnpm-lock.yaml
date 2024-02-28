@@ -72,7 +72,7 @@ devDependencies:
     version: 9.0.11
   msw:
     specifier: ^2.1.5
-    version: 2.2.1(typescript@5.2.2)
+    version: 2.2.2(typescript@5.2.2)
   stylelint:
     specifier: ^16.0.0
     version: 16.2.1(typescript@5.2.2)
@@ -3711,8 +3711,8 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw@2.2.1(typescript@5.2.2):
-    resolution: {integrity: sha512-DCsZAQwan+2onEcpD86fiEnCKW4IvYzqcwDq/2TIoeNrmBqNp/mJW4wHQyxcoYrRPwgujin7wDFflqiSO1iT/w==}
+  /msw@2.2.2(typescript@5.2.2):
+    resolution: {integrity: sha512-Vn3RGCmp14Oy1Lo9yGJMk4+qV/WdK8opNyHt0jdBnvzQ8OEhFvQ2AeM9EXOgQtGLvzUWzqrrwlfwmsCkFViUlg==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
