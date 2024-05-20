@@ -34,7 +34,7 @@
     "homepage": "https://github.com/rogerio-romao/js-next-frontend-starter#readme",
     "devDependencies": {
         "@isnotdefined/stylelint-plugin": "^5.0.0",
-        "@playwright/test": "^1.41.2",
+        "@playwright/test": "^1.44.0",
         "@types/node": "^20.11.19",
         "@types/react": "^18.2.56",
         "@types/react-dom": "^18.2.19",
