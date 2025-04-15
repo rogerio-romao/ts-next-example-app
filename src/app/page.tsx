@@ -1,6 +1,6 @@
 // components
+import Link from 'next/link';
 import React from 'react';
-import Test from '../components/Test';
 
 // styles
 import styles from '../css/app.module.css';
@@ -12,7 +12,7 @@ export default function Page(): React.ReactElement {
 
             <hr className={styles.separator} />
 
-            <Test />
+            <Link href='/dashboard'>Dashboard</Link>
 
             <p className={styles.lorem}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
