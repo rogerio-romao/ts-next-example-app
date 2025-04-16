@@ -51,7 +51,7 @@
         "eslint-plugin-sonarjs": "^1.0.3",
         "eslint-plugin-unicorn": "^53.0.0",
         "husky": "^9.1.7",
-        "msw": "^2.2.9",
+        "msw": "^2.7.4",
         "stylelint": "^16.0.0",
         "stylelint-a11y": "^1.2.3",
         "stylelint-css-modules": "^1.2.2",
