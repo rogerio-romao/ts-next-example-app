@@ -31,6 +31,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+        disable-default-queries: true
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
