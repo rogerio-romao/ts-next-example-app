@@ -4,7 +4,7 @@
     "reportNeedlessDisables": true,
     "plugins": [
         "@isnotdefined/stylelint-plugin",
-        "stylelint-a11y",
+        "@double-great/stylelint-a11y",
         "stylelint-css-modules",
         "stylelint-css-modules-no-global-scoped-selector",
         "stylelint-declaration-block-no-ignored-properties",

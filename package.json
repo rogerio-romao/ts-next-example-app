@@ -33,6 +33,7 @@
     },
     "homepage": "https://github.com/rogerio-romao/js-next-frontend-starter#readme",
     "devDependencies": {
+        "@double-great/stylelint-a11y": "^3.0.4",
         "@isnotdefined/stylelint-plugin": "^5.0.0",
         "@playwright/test": "^1.44.0",
         "@types/node": "^20.12.12",
@@ -53,7 +54,6 @@
         "husky": "^9.1.7",
         "msw": "^2.7.4",
         "stylelint": "^16.0.0",
-        "stylelint-a11y": "^1.2.3",
         "stylelint-css-modules": "^1.2.2",
         "stylelint-css-modules-no-global-scoped-selector": "^1.0.2",
         "stylelint-declaration-block-no-ignored-properties": "^2.8.0",

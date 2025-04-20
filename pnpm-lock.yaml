@@ -18,6 +18,9 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@double-great/stylelint-a11y':
+        specifier: ^3.0.4
+        version: 3.0.4(stylelint@16.5.0(typescript@5.4.5))
       '@isnotdefined/stylelint-plugin':
         specifier: ^5.0.0
         version: 5.0.0(stylelint@16.5.0(typescript@5.4.5))
@@ -78,9 +81,6 @@ importers:
       stylelint:
         specifier: ^16.0.0
         version: 16.5.0(typescript@5.4.5)
-      stylelint-a11y:
-        specifier: ^1.2.3
-        version: 1.2.3(stylelint@16.5.0(typescript@5.4.5))
       stylelint-css-modules:
         specifier: ^1.2.2
         version: 1.2.2(stylelint@16.5.0(typescript@5.4.5))
@@ -217,6 +217,12 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss-selector-parser: ^6.0.13
+
+  '@double-great/stylelint-a11y@3.0.4':
+    resolution: {integrity: sha512-a+cFkT7XRLSh90kv3PPl1sqP2u5I0kvNMTDclEsMRPLexlI9mqdPwN2IzF+79TUpRG3+scsopMT108E772fDMg==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: '>=16.0.0'
 
   '@dual-bundle/import-meta-resolve@4.0.0':
     resolution: {integrity: sha512-ZKXyJeFAzcpKM2kk8ipoGIPUqx9BX52omTGnfwjJvxOCaZTM2wtDK7zN0aIgPRbT9XYAlha0HtmZ+XKteuh0Gw==}
@@ -3001,12 +3007,6 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  stylelint-a11y@1.2.3:
-    resolution: {integrity: sha512-S/iiKFUsYBfa4suxP0pYQqoPB9R1+SnvxVuzHHlz9al0IWxLZzXlnZEqEez0zNOhVh5iO3rATUmDnbZE5wm/pQ==}
-    engines: {node: '>=8.7.0'}
-    peerDependencies:
-      stylelint: ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
-
   stylelint-css-modules-no-global-scoped-selector@1.0.2:
     resolution: {integrity: sha512-NMerTM1/8D4Az/c3P59eYptP3PoNuUXV1NuJ+Xe+TILqZH8UE4oV9NvjUnklnVHvYqk5HsjAURnvMNXZAzYBLA==}
     peerDependencies:
@@ -3594,6 +3594,11 @@ snapshots:
   '@csstools/selector-specificity@3.0.3(postcss-selector-parser@6.0.16)':
     dependencies:
       postcss-selector-parser: 6.0.16
+
+  '@double-great/stylelint-a11y@3.0.4(stylelint@16.5.0(typescript@5.4.5))':
+    dependencies:
+      postcss: 8.5.3
+      stylelint: 16.5.0(typescript@5.4.5)
 
   '@dual-bundle/import-meta-resolve@4.0.0': {}
 
@@ -6669,10 +6674,6 @@ snapshots:
     dependencies:
       client-only: 0.0.1
       react: 18.3.1
-
-  stylelint-a11y@1.2.3(stylelint@16.5.0(typescript@5.4.5)):
-    dependencies:
-      stylelint: 16.5.0(typescript@5.4.5)
 
   stylelint-css-modules-no-global-scoped-selector@1.0.2(stylelint@16.5.0(typescript@5.4.5)):
     dependencies:

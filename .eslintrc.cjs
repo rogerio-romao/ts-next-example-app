@@ -499,4 +499,12 @@ module.exports = {
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/require-await': 'error',
     },
+    overrides: [
+        {
+            files: ['playwright.config.js'],
+            rules: {
+                'import/named': 'off',
+            },
+        },
+    ],
 };
