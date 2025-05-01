@@ -52,7 +52,7 @@
         "eslint-plugin-sonarjs": "^1.0.3",
         "eslint-plugin-unicorn": "^53.0.0",
         "husky": "^9.1.7",
-        "msw": "^2.7.4",
+        "msw": "^2.7.5",
         "stylelint": "^16.0.0",
         "stylelint-css-modules": "^1.2.2",
         "stylelint-css-modules-no-global-scoped-selector": "^1.0.2",
