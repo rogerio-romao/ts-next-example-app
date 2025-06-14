@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, test, vi } from 'vitest';
+
 import {
     executeAfterTwoHours,
     executeEveryMinute,
@@ -95,10 +96,9 @@ describe('reading messages', () => {
 });
 
 // Timers
-// eslint-disable-next-line no-console
-const mock = vi.fn(() => console.log('executed'));
-
 describe('delayed execution', () => {
+    // eslint-disable-next-line no-console -- this only runs in tests
+    const mock = vi.fn(() => console.log('executed'));
     beforeEach(() => {
         vi.useFakeTimers();
     });

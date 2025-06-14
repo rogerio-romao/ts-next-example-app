@@ -10,9 +10,9 @@ const businessHours = [9, 17] as const;
 
 export function purchase(): { message: string } {
     const currentHour = new Date().getHours();
-    const [open, close] = businessHours;
+    const [openHour, closingHour] = businessHours;
 
-    if (currentHour > open && currentHour < close) {
+    if (currentHour > openHour && currentHour < closingHour) {
         return { message: 'Success' };
     }
 
@@ -24,6 +24,7 @@ export const messages = {
         { message: 'Simple test message', from: 'Testman' },
         // ...
     ],
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define -- this is a circular reference
     getLatest,
 };
 
