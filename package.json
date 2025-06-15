@@ -2,38 +2,44 @@
     "name": "ts-next-example-app",
     "version": "1.0.0",
     "description": "My Typescript Next.js example app",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "eslint . --ext .js,.jsx",
-        "lint:fix": "eslint . --ext .js,.jsx --fix",
-        "lint:css": "stylelint \"**/*.{css, scss}\"",
-        "lint:css:fix": "stylelint \"**/*.{css, scss}\" --fix",
-        "test": "vitest",
-        "test:ui": "vitest --ui --coverage",
-        "test:ci": "vitest run",
-        "test:coverage": "vitest run --coverage",
-        "test:e2e": "playwright test",
-        "test:e2e:ui": "playwright test --ui",
-        "test:e2e:codegen": "playwright codegen",
-        "precommit": "pnpm run lint && pnpm run lint:css && pnpm run test:ci",
-        "prepare": "husky install"
+    "homepage": "https://github.com/rogerio-romao/js-next-frontend-starter#readme",
+    "bugs": {
+        "url": "https://github.com/rogerio-romao/js-next-frontend-starter/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/rogerio-romao/js-next-frontend-starter.git"
     },
-    "author": "Rogerio Romao",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/rogerio-romao/js-next-frontend-starter/issues"
+    "author": "Rogerio Romao",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "eslint . --ext .js,.jsx",
+        "lint:css": "stylelint \"**/*.{css, scss}\"",
+        "lint:css:fix": "stylelint \"**/*.{css, scss}\" --fix",
+        "lint:fix": "eslint . --ext .js,.jsx --fix",
+        "precommit": "pnpm run lint && pnpm run lint:css && pnpm run test:ci",
+        "prepare": "husky install",
+        "start": "next start",
+        "test": "vitest",
+        "test:ci": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "test:e2e": "playwright test",
+        "test:e2e:codegen": "playwright codegen",
+        "test:e2e:ui": "playwright test --ui",
+        "test:ui": "vitest --ui --coverage"
     },
-    "homepage": "https://github.com/rogerio-romao/js-next-frontend-starter#readme",
+    "dependencies": {
+        "next": "^14.2.26",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
     "devDependencies": {
         "@double-great/stylelint-a11y": "^3.0.4",
+        "@eslint/json": "^0.12.0",
         "@isnotdefined/stylelint-plugin": "^5.0.0",
         "@playwright/test": "^1.44.0",
         "@types/node": "^20.12.12",
@@ -43,15 +49,18 @@
         "@typescript-eslint/parser": "^7.9.0",
         "@vitest/coverage-v8": "^1.2.2",
         "@vitest/ui": "^1.2.2",
-        "eslint": "^8.56.0",
+        "eslint": "^9.28.0",
         "eslint-plugin-eslint-comments": "^3.2.0",
         "eslint-plugin-import": "^2.31.0",
-        "eslint-plugin-promise": "^6.1.1",
-        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-package-json": "^0.33.2",
+        "eslint-plugin-promise": "^7.2.1",
+        "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^4.6.2",
-        "eslint-plugin-sonarjs": "^1.0.3",
-        "eslint-plugin-unicorn": "^53.0.0",
+        "eslint-plugin-sonarjs": "^3.0.2",
+        "eslint-plugin-unicorn": "^59.0.1",
+        "globals": "^15.14.0",
         "husky": "^9.1.7",
+        "jsonc-eslint-parser": "^2.4.0",
         "msw": "^2.7.4",
         "stylelint": "^16.0.0",
         "stylelint-css-modules": "^1.2.2",
@@ -67,12 +76,8 @@
         "stylelint-use-nesting": "^5.0.0",
         "stylelint-value-no-exposed-custom-properties": "^2.3.1",
         "typescript": "^5.2.2",
+        "typescript-eslint": "^8.33.0",
         "vitest": "^1.6.1"
-    },
-    "dependencies": {
-        "next": "^14.2.26",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
     },
     "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }

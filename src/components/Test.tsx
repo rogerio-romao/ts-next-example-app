@@ -8,12 +8,12 @@ function Test(): React.ReactElement {
     return (
         <>
             <h1>Test</h1>
-
             <p data-testid='counter'>Counter: {counter}</p>
 
             <button
                 className={styles.increment_btn}
-                onClick={() => setCounter((counter) => counter + 1)}
+                type='button'
+                onClick={() => setCounter((ctr) => ctr + 1)}
             >
                 Increment
             </button>
