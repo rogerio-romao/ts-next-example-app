@@ -25,6 +25,8 @@ export default tseslint.config([
         settings: {
             react: {
                 version: 'detect',
+                formComponents: [{ name: 'Form', formAttribute: 'action' }],
+                linkComponents: [{ name: 'Link', linkAttribute: 'href' }],
             },
         },
         languageOptions: {
@@ -621,7 +623,7 @@ export default tseslint.config([
             'sonarjs/hashing': 'error',
             'sonarjs/insecure-cookie': 'error',
             'sonarjs/insecure-jwt-token': 'error',
-            'sonarjs/jsx-no-leaked-render': 'warn', // frontend to be used in React projects
+            'sonarjs/jsx-no-leaked-render': 'off', // handled by react/jsx-no-leaked-render
             'sonarjs/link-with-target-blank': 'warn',
             'sonarjs/max-lines': 'off',
             'sonarjs/max-lines-per-function': 'off',
@@ -890,6 +892,93 @@ export default tseslint.config([
                     rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',
                 },
             ],
+            'react/button-has-type': 'warn',
+            'react/checked-requires-onchange-or-readonly': 'warn',
+            'react/destructuring-assignment': [
+                'warn',
+                'always',
+                { destructureInSignature: 'always' },
+            ],
+            'react/function-component-definition': [
+                'warn',
+                {
+                    namedComponents: 'function-declaration',
+                    unnamedComponents: 'function-expression',
+                },
+            ],
+            'react/hook-use-state': 'warn',
+            'react/iframe-missing-sandbox': 'warn',
+            'react/jsx-boolean-value': ['warn', 'never'],
+            'react/jsx-child-element-spacing': 'warn',
+            'react/jsx-curly-brace-presence': [
+                'warn',
+                {
+                    props: 'never',
+                    children: 'never',
+                    propElementValues: 'always',
+                },
+            ],
+            'react/jsx-filename-extension': [
+                'warn',
+                {
+                    extensions: ['.jsx', '.tsx'],
+                    allow: 'as-needed',
+                    ignoreFilesWithoutCode: true,
+                },
+            ],
+            'react/jsx-handler-names': 'warn',
+            'react/jsx-max-depth': ['warn', { max: 5 }],
+            'react/jsx-no-comment-textnodes': 'error',
+            'react/jsx-no-constructed-context-values': 'error',
+            'react/jsx-no-duplicate-props': 'error',
+            'react/jsx-no-leaked-render': 'error',
+            'react/jsx-no-target-blank': [
+                'error',
+                {
+                    enforceDynamicLinks: 'always',
+                    warnOnSpreadAttributes: true,
+                    forms: true,
+                    links: true,
+                },
+            ],
+            'react/jsx-no-useless-fragment': 'warn',
+            'react/jsx-pascal-case': ['warn', { allowNamespace: false }],
+            'react/jsx-props-no-spread-multi': 'error',
+            'react/jsx-sort-props': [
+                'warn',
+                {
+                    callbacksLast: true,
+                    shorthandFirst: true,
+                    shorthandLast: false,
+                    noSortAlphabetically: false,
+                    reservedFirst: true,
+                    ignoreCase: true,
+                    multiline: 'last',
+                },
+            ],
+            'react/no-access-state-in-setstate': 'error',
+            'react/no-array-index-key': 'warn',
+            'react/no-children-prop': 'warn',
+            'react/no-danger': 'warn',
+            'react/no-deprecated': 'warn',
+            'react/no-invalid-html-attribute': 'error',
+            'react/no-object-type-as-default-prop': 'error',
+            'react/no-this-in-sfc': 'warn',
+            'react/no-unknown-property': [
+                'error',
+                { ignore: [], requireDataLowercase: true },
+            ],
+            'react/no-unused-prop-types': 'warn',
+            'react/prefer-read-only-props': 'warn',
+            'react/require-default-props': [
+                'error',
+                {
+                    forbidDefaultForRequired: true,
+                    functions: 'defaultArguments',
+                },
+            ],
+            'react/style-prop-object': 'error',
+            'react/void-dom-elements-no-children': 'error',
         },
     },
     {
