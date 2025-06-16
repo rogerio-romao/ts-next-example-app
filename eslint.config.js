@@ -1,6 +1,7 @@
 import eslintJsonPlugin from '@eslint/json';
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import importPlugin from 'eslint-plugin-import';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import packageJson from 'eslint-plugin-package-json';
 import promisePlugin from 'eslint-plugin-promise';
 import react from 'eslint-plugin-react';
@@ -21,12 +22,48 @@ export default tseslint.config([
             promise: promisePlugin,
             '@typescript-eslint': tseslint.plugin,
             react,
+            'jsx-a11y': jsxA11y,
         },
         settings: {
             react: {
                 version: 'detect',
                 formComponents: [{ name: 'Form', formAttribute: 'action' }],
                 linkComponents: [{ name: 'Link', linkAttribute: 'href' }],
+            },
+            'jsx-a11y': {
+                components: {
+                    Link: 'a',
+                    Button: 'button',
+                    Form: 'form',
+                    Input: 'input',
+                    Textarea: 'textarea',
+                    Select: 'select',
+                    Checkbox: 'input[type="checkbox"]',
+                    Radio: 'input[type="radio"]',
+                    Image: 'img',
+                    Video: 'video',
+                    Audio: 'audio',
+                    Dialog: 'dialog',
+                    Modal: 'dialog',
+                    Tooltip: 'div[role="tooltip"]',
+                    Popover: 'div[role="dialog"]',
+                    Alert: 'div[role="alert"]',
+                    Navigation: 'nav',
+                    Main: 'main',
+                    Footer: 'footer',
+                    Header: 'header',
+                },
+                attributes: {
+                    for: ['htmlFor', 'for'],
+                },
+                polymorphicPropName: 'as',
+                polymorphicAllowList: [
+                    'Box',
+                    'Button',
+                    'Link',
+                    'Text',
+                    'Heading',
+                ],
             },
         },
         languageOptions: {
@@ -979,6 +1016,71 @@ export default tseslint.config([
             ],
             'react/style-prop-object': 'error',
             'react/void-dom-elements-no-children': 'error',
+            // JSX Accessibility rules
+            'jsx-a11y/alt-text': 'warn',
+            'jsx-a11y/anchor-ambiguous-text': 'warn',
+            'jsx-a11y/anchor-has-content': 'warn',
+            'jsx-a11y/anchor-is-valid': 'warn',
+            'jsx-a11y/aria-activedescendant-has-tabindex': 'warn',
+            'jsx-a11y/aria-props': 'off', // handled by react/no-unknown-property
+            'jsx-a11y/aria-proptypes': 'warn', // typescript handles this, but leaving on for js
+            'jsx-a11y/aria-role': ['warn', { ignoreNonDOM: true }],
+            'jsx-a11y/aria-unsupported-elements': 'error',
+            'jsx-a11y/autocomplete-valid': [
+                'warn',
+                {
+                    inputComponents: ['Combobox', 'Autocomplete'],
+                },
+            ],
+            'jsx-a11y/click-events-have-key-events': 'warn',
+            'jsx-a11y/control-has-associated-label': 'warn',
+            'jsx-a11y/heading-has-content': 'warn',
+            'jsx-a11y/html-has-lang': 'warn',
+            'jsx-a11y/iframe-has-title': 'warn',
+            'jsx-a11y/img-redundant-alt': 'warn',
+            'jsx-a11y/interactive-supports-focus': 'warn',
+            'jsx-a11y/label-has-associated-control': [
+                'warn',
+                {
+                    controlComponents: ['Input', 'Select', 'Textarea'],
+                    assert: 'either',
+                    depth: 3,
+                },
+            ],
+            'jsx-a11y/lang': 'error',
+            'jsx-a11y/media-has-caption': 'warn',
+            'jsx-a11y/mouse-events-have-key-events': [
+                'error',
+                {
+                    hoverInHandlers: [
+                        'onMouseOver',
+                        'onMouseEnter',
+                        'onPointerOver',
+                        'onPointerEnter',
+                    ],
+                    hoverOutHandlers: [
+                        'onMouseOut',
+                        'onMouseLeave',
+                        'onPointerOut',
+                        'onPointerLeave',
+                    ],
+                },
+            ],
+            'jsx-a11y/no-access-key': 'warn',
+            'jsx-a11y/no-aria-hidden-on-focusable': 'warn',
+            'jsx-a11y/no-autofocus': 'warn',
+            'jsx-a11y/no-distracting-elements': 'error',
+            'jsx-a11y/no-interactive-element-to-noninteractive-role': 'warn',
+            'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+            'jsx-a11y/no-noninteractive-element-to-interactive-role': 'warn',
+            'jsx-a11y/no-noninteractive-tabindex': 'warn',
+            'jsx-a11y/no-redundant-roles': 'error',
+            'jsx-a11y/no-static-element-interactions': 'warn',
+            'jsx-a11y/prefer-tag-over-role': 'error',
+            'jsx-a11y/role-has-required-aria-props': 'warn',
+            'jsx-a11y/role-supports-aria-props': 'warn',
+            'jsx-a11y/scope': 'warn',
+            'jsx-a11y/tabindex-no-positive': 'warn',
         },
     },
     {
