@@ -1,5 +1,4 @@
 import eslintJsonPlugin from '@eslint/json';
-import { assert } from 'console';
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
