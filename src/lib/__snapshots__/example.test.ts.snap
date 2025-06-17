@@ -1,3 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`toUpperCase 1`] = `"FOOBAR"`;
+exports[`example tests > converts foobar to UPPERCASE 1`] = `"FOOBAR"`;
+
+// (Line removed)

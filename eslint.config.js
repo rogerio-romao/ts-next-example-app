@@ -1,4 +1,5 @@
 import eslintJsonPlugin from '@eslint/json';
+import vitest from '@vitest/eslint-plugin';
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -13,6 +14,18 @@ import jsoncParser from 'jsonc-eslint-parser';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config([
+    {
+        ignores: [
+            '**/node_modules/**',
+            '**/dist/**',
+            '**/build/**',
+            '**/coverage/**',
+            '**/.next/**',
+            '**/out/**',
+            '**/.eslintcache',
+            'package-lock.json',
+        ],
+    },
     {
         files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
         plugins: {
@@ -1171,6 +1184,68 @@ export default tseslint.config([
             '@eslint/json/no-unnormalized-keys': 'error',
             '@eslint/json/sort-keys': 'off', // doesnt auto-fix it
             '@eslint/json/top-level-interop': 'error',
+        },
+    },
+    {
+        plugins: { vitest: vitest },
+        files: [
+            '**/*.test.ts',
+            '**/*.test.tsx',
+            '**/*.test.js',
+            '**/*.test.jsx',
+        ],
+        settings: {
+            vitest: {
+                typecheck: true,
+            },
+        },
+        rules: {
+            'vitest/consistent-test-it': 'off',
+            'vitest/consistent-vitest-vi': 'warn',
+            'vitest/expect-expect': 'error',
+            'vitest/max-nested-describe': ['warn', { max: 2 }],
+            'vitest/no-commented-out-tests': 'warn',
+            'vitest/no-conditional-expect': 'warn',
+            'vitest/no-conditional-tests': 'warn',
+            'vitest/no-duplicate-hooks': 'error',
+            'vitest/no-identical-title': 'error',
+            'vitest/no-import-node-test': 'error',
+            'vitest/no-standalone-expect': 'warn',
+            'vitest/no-test-prefixes': 'warn',
+            'vitest/no-test-return-statement': 'error',
+            'vitest/padding-around-all': 'warn',
+            'vitest/prefer-comparison-matcher': 'warn',
+            'vitest/prefer-each': 'warn',
+            'vitest/prefer-equality-matcher': 'warn',
+            'vitest/prefer-expect-resolves': 'warn',
+            'vitest/prefer-hooks-in-order': 'error',
+            'vitest/prefer-hooks-on-top': 'error',
+            'vitest/prefer-mock-promise-shorthand': 'warn',
+            'vitest/prefer-spy-on': 'warn',
+            'vitest/prefer-strict-equal': 'warn',
+            'vitest/prefer-to-be': 'warn',
+            'vitest/prefer-to-be-object': 'warn',
+            'vitest/prefer-to-contain': 'error',
+            'vitest/prefer-to-have-length': 'error',
+            'vitest/prefer-todo': 'warn',
+            'vitest/prefer-vi-mocked': 'warn',
+            'vitest/require-local-test-context-for-concurrent-snapshots':
+                'warn',
+            'vitest/require-mock-type-parameters': 'off',
+            'vitest/require-to-throw-message': 'warn',
+            'vitest/require-top-level-describe': 'error',
+            'vitest/valid-describe-callback': 'error',
+            'vitest/valid-expect': 'error',
+            'vitest/valid-title': [
+                'error',
+                {
+                    ignoreTypeOfDescribeName: false,
+                    allowArguments: false,
+                    disallowedWords: ['skip', 'only'],
+                    mustNotMatch: ['^\\s+$', '^\\s*\\d+\\s*$'],
+                },
+            ],
+            'vitest/valid-expect-in-promise': 'warn',
         },
     },
 ]);
