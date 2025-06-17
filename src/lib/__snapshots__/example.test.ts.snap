@@ -2,4 +2,4 @@
 
 exports[`example tests > converts foobar to UPPERCASE 1`] = `"FOOBAR"`;
 
-exports[`toUpperCase 1`] = `"FOOBAR"`;
+// (Line removed)
