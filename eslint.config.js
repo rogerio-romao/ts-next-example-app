@@ -5,6 +5,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import packageJson from 'eslint-plugin-package-json';
 import promisePlugin from 'eslint-plugin-promise';
 import react from 'eslint-plugin-react';
+import * as reactHooks from 'eslint-plugin-react-hooks';
 import sonarJsPlugin from 'eslint-plugin-sonarjs';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
@@ -23,6 +24,7 @@ export default tseslint.config([
             '@typescript-eslint': tseslint.plugin,
             react,
             'jsx-a11y': jsxA11y,
+            'react-hooks': reactHooks,
         },
         settings: {
             react: {
@@ -1081,6 +1083,9 @@ export default tseslint.config([
             'jsx-a11y/role-supports-aria-props': 'warn',
             'jsx-a11y/scope': 'warn',
             'jsx-a11y/tabindex-no-positive': 'warn',
+            // React Hooks rules
+            'react-hooks/rules-of-hooks': 'error',
+            'react-hooks/exhaustive-deps': 'warn',
         },
     },
     {
