@@ -20,7 +20,7 @@
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.json,.html",
         "lint:css": "stylelint \"**/*.{css, scss}\"",
         "lint:css:fix": "stylelint \"**/*.{css, scss}\" --fix",
-        "lint:fix": "eslint . --ext .js,.jsx --fix",
+        "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.json,.html --fix",
         "precommit": "pnpm run lint && pnpm run lint:css && pnpm run test:ci",
         "prepare": "husky install",
         "start": "next start",
