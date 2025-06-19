@@ -40,6 +40,8 @@
     "devDependencies": {
         "@double-great/stylelint-a11y": "^3.0.4",
         "@eslint/json": "^0.12.0",
+        "@html-eslint/eslint-plugin": "^0.41.0",
+        "@html-eslint/parser": "^0.41.0",
         "@isnotdefined/stylelint-plugin": "^5.0.0",
         "@playwright/test": "^1.53.0",
         "@types/node": "^20.12.12",
