@@ -12,9 +12,11 @@ import react from 'eslint-plugin-react';
 import * as reactHooks from 'eslint-plugin-react-hooks';
 import sonarJsPlugin from 'eslint-plugin-sonarjs';
 import unicornPlugin from 'eslint-plugin-unicorn';
+import eslintPluginYml from 'eslint-plugin-yml';
 import globals from 'globals';
 import jsoncParser from 'jsonc-eslint-parser';
 import tseslint from 'typescript-eslint';
+import yamlEslintParser from 'yaml-eslint-parser';
 
 export default tseslint.config([
     {
@@ -27,6 +29,7 @@ export default tseslint.config([
             '**/out/**',
             '**/.eslintcache',
             'package-lock.json',
+            'pnpm-lock.yaml',
             '**/tsconfig.json',
             '**/playwright-report/**',
         ],
@@ -1880,6 +1883,50 @@ export default tseslint.config([
             'promise/prefer-catch': 'warn',
             'promise/spec-only': 'error',
             'promise/valid-params': 'error',
+        },
+    },
+    // Yaml linting
+    {
+        files: ['**/*.yml', '**/*.yaml'],
+        ignores: ['pnpm-lock.yaml'],
+        plugins: { yml: eslintPluginYml },
+        languageOptions: {
+            parser: yamlEslintParser,
+            parserOptions: {
+                defaultYAMLVersion: '1.2',
+            },
+        },
+        rules: {
+            'yml/key-name-casing': [
+                'error',
+                { camelCase: false, 'kebab-case': true, snake_case: true },
+            ],
+            'yml/no-empty-document': 'warn',
+            'yml/no-empty-key': 'error',
+            'yml/no-empty-mapping-value': 'error',
+            'yml/no-empty-sequence-entry': 'error',
+            'yml/no-trailing-zeros': 'warn',
+            'yml/plain-scalar': 'warn',
+            'yml/quotes': [
+                'error',
+                {
+                    prefer: 'single',
+                    avoidEscape: true,
+                },
+            ],
+            'yml/require-string-key': 'error',
+            'yml/sort-keys': [
+                'off', // probably wont work well with many config files
+                'asc',
+                {
+                    caseSensitive: false,
+                    natural: true,
+                    minKeys: 2,
+                    allowLineSeparatedGroups: true,
+                },
+            ],
+            'yml/no-irregular-whitespace': 'error',
+            'yml/spaced-comment': 'warn',
         },
     },
 ]);
