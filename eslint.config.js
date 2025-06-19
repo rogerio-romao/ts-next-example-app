@@ -1,7 +1,9 @@
 import eslintJsonPlugin from '@eslint/json';
+import html from '@html-eslint/eslint-plugin';
+import htmlParser from '@html-eslint/parser';
 import vitest from '@vitest/eslint-plugin';
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
-import html from 'eslint-plugin-html';
+import htmlScripts from 'eslint-plugin-html';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import packageJson from 'eslint-plugin-package-json';
@@ -105,7 +107,7 @@ export default tseslint.config([
         },
         // JS and TS rules
         rules: {
-            // Possible Errors
+            // Best Practices
             'array-callback-return': [
                 'error',
                 { allowImplicit: true, checkForEach: true },
@@ -1253,11 +1255,65 @@ export default tseslint.config([
             'vitest/valid-expect-in-promise': 'warn',
         },
     },
-    // JS in HTML scripts rules
+    // HTML linting
     {
         files: ['**/*.html'],
         plugins: {
             html,
+        },
+        languageOptions: {
+            parser: htmlParser,
+        },
+        rules: {
+            // Best Practices
+            'html/no-duplicate-attrs': 'error',
+            'html/no-duplicate-class': 'error',
+            'html/no-duplicate-id': 'error',
+            'html/no-extra-spacing-text': 'warn',
+            'html/no-inline-styles': 'warn',
+            'html/no-nested-interactive': 'warn',
+            'html/no-obsolete-tags': 'error',
+            'html/no-script-style-type': 'warn',
+            'html/no-target-blank': 'error',
+            'html/prefer-https': 'warn',
+            'html/require-button-type': 'warn',
+            'html/require-doctype': 'error',
+            'html/require-explicit-size': 'off', // too unpractical
+            'html/require-li-container': 'error',
+            'html/require-meta-charset': 'error',
+            'html/use-baseline': ['warn', { available: 'widely' }],
+            // SEO
+            'html/no-multiple-h1': 'error',
+            'html/require-lang': 'warn',
+            'html/require-meta-description': 'warn',
+            'html/require-open-graph-protocol': 'off', // needs more research
+            'html/require-title': 'error',
+            // Accessibility
+            'html/no-abstract-roles': 'error',
+            'html/no-accesskey-attrs': 'error',
+            'html/no-aria-hidden-body': 'error',
+            'html/no-heading-inside-button': 'error',
+            'html/no-invalid-role': 'error',
+            'html/no-non-scalable-viewport': 'error',
+            'html/no-positive-tabindex': 'warn',
+            'html/no-skip-heading-levels': 'warn',
+            'html/require-form-method': 'warn',
+            'html/require-frame-title': 'warn',
+            'html/require-img-alt': 'error',
+            'html/require-input-label': 'warn',
+            'html/require-meta-viewport': 'error',
+            // Style
+            'html/id-naming-convention': ['warn', 'kebab-case'],
+            'html/lowercase': 'error',
+            'html/max-element-depth': ['warn', { max: 5 }],
+            'html/sort-attrs': 'warn',
+        },
+    },
+    // JS in HTML scripts rules
+    {
+        files: ['**/*.html'],
+        plugins: {
+            'html-scripts': htmlScripts,
             unicorn: unicornPlugin,
             sonarjs: sonarJsPlugin,
             promise: promisePlugin,
@@ -1266,8 +1322,8 @@ export default tseslint.config([
             sourceType: 'module',
         },
         settings: {
-            'html/indent': '+4',
-            'html/report-bad-indent': 'warn',
+            'html-scripts/indent': '+4',
+            'html-scripts/report-bad-indent': 'warn',
         },
         rules: {
             // Possible Errors
