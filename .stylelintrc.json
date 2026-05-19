@@ -123,20 +123,15 @@
         "plugin/stylelint-group-selectors": true,
         "plugin/no-low-performance-animation-properties": true,
         "plugin/no-unused-selectors": true,
-        "plugin/use-defensive-css": [
-            true,
-            {
-                "background-repeat": true,
-                "flex-wrapping": true,
-                "scroll-chaining": true,
-                "vendor-prefix-grouping": true
-            }
-        ],
-        "plugin/use-logical-properties-and-values": [
+        "defensive-css/require-background-repeat": true,
+        "defensive-css/require-flex-wrap": true,
+        "defensive-css/require-overscroll-behavior": true,
+        "defensive-css/no-mixed-vendor-prefixes": true,
+        "logical-css/require-logical-properties": [
             true,
             { "severity": "warning" }
         ],
-        "plugin/use-logical-units": [true, { "severity": "warning" }],
+        "logical-css/require-logical-units": [true, { "severity": "warning" }],
         "rem-over-px/rem-over-px": true,
         "plugin/selector-tag-no-without-class": ["div", "span"],
         "csstools/use-nesting": "always",

@@ -1,6 +1,7 @@
 import eslintJsonPlugin from '@eslint/json';
 import html from '@html-eslint/eslint-plugin';
 import htmlParser from '@html-eslint/parser';
+import nextPlugin from '@next/eslint-plugin-next';
 import vitest from '@vitest/eslint-plugin';
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import htmlScripts from 'eslint-plugin-html';
@@ -14,9 +15,9 @@ import sonarJsPlugin from 'eslint-plugin-sonarjs';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import eslintPluginYml from 'eslint-plugin-yml';
 import globals from 'globals';
-import jsoncParser from 'jsonc-eslint-parser';
+import * as jsoncParser from 'jsonc-eslint-parser';
 import tseslint from 'typescript-eslint';
-import yamlEslintParser from 'yaml-eslint-parser';
+import * as yamlEslintParser from 'yaml-eslint-parser';
 
 export default tseslint.config([
     {
@@ -33,6 +34,21 @@ export default tseslint.config([
             '**/tsconfig.json',
             '**/playwright-report/**',
         ],
+    },
+    {
+        files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+        plugins: {
+            '@next/next': nextPlugin,
+        },
+        settings: {
+            next: {
+                rootDir: import.meta.dirname,
+            },
+        },
+        rules: {
+            ...nextPlugin.configs.recommended.rules,
+            ...nextPlugin.configs['core-web-vitals'].rules,
+        },
     },
     {
         files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
@@ -727,7 +743,6 @@ export default tseslint.config([
             'sonarjs/no-misleading-array-reverse': 'warn',
             'sonarjs/no-nested-switch': 'warn',
             'sonarjs/no-nested-template-literals': 'warn',
-            'sonarjs/no-one-iteration-loop': 'error',
             'sonarjs/no-redundant-boolean': 'warn',
             'sonarjs/no-redundant-jump': 'off',
             'sonarjs/no-same-line-conditional': 'error',
@@ -1157,9 +1172,7 @@ export default tseslint.config([
             'package-json/restrict-dependency-ranges': 'off',
             'package-json/sort-collections': 'warn',
             'package-json/unique-dependencies': 'error',
-            'package-json/valid-local-dependency': 'error',
             'package-json/valid-name': 'error',
-            'package-json/valid-package-definition': 'warn',
             'package-json/valid-repository-directory': 'warn',
             'package-json/valid-version': 'error',
         },
@@ -1843,7 +1856,6 @@ export default tseslint.config([
             'sonarjs/no-misleading-array-reverse': 'warn',
             'sonarjs/no-nested-switch': 'warn',
             'sonarjs/no-nested-template-literals': 'warn',
-            'sonarjs/no-one-iteration-loop': 'error',
             'sonarjs/no-redundant-boolean': 'warn',
             'sonarjs/no-redundant-jump': 'off',
             'sonarjs/no-same-line-conditional': 'error',
