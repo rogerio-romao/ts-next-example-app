@@ -8,7 +8,7 @@ import styles from '../css/app.module.css';
 export default function Page(): React.ReactElement {
     return (
         <div className={styles.app}>
-            <h1 className={styles.mainpage_title}>Next.Js 14 Typescript App</h1>
+            <h1 className={styles.mainpage_title}>Next.Js 16 Typescript App</h1>
 
             <hr className={styles.separator} />
 
